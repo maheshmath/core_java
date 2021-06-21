@@ -4,7 +4,11 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
-
+/**
+ * 
+ * @author Mahesh Math
+ * Algorithms
+ */
 public class SearchTest {
 
 	private static int[] generateRandomNumber(int limit) {
