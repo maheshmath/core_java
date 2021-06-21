@@ -1,8 +1,6 @@
 package com.algo.search;
 
-import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.IntStream;
+import com.algo.util.Util;
 
 /**
  * 
@@ -10,21 +8,6 @@ import java.util.stream.IntStream;
  * Algorithms
  */
 public class SearchTest {
-
-	private static int[] generateRandomNumber(int limit) {
-		
-		int [] numbers = new int[limit];
-		
-		IntStream intStream = new Random().ints(0,limit).distinct().limit(limit);
-		AtomicInteger ordinal = new AtomicInteger(0);
-	
-		intStream.forEach(number->{
-			numbers[ordinal.getAndIncrement()]=number;
-			
-		});
-		
-		return numbers;
-	}
 	
 	private static int linearSearch(int [] values, int number) {
 		
@@ -37,11 +20,6 @@ public class SearchTest {
 		return -1;
 	}
 	
-	private static void printNumbers(int []nums) {
-		for(int index=0;index<nums.length;index++) {
-			System.out.println(index+"-----"+nums[index]);
-		}
-	}
 	
 	private static int tunedLinearSearch(int [] values, int number) {
 		int rightIndex = values.length-1;
@@ -67,7 +45,7 @@ public class SearchTest {
 	public static void main(String[] args) {
 
 		int numberToFind = 23;
-		int [] numbers = generateRandomNumber(5000000);
+		int [] numbers = Util.generateRandomNumber(5000000);
 		//printNumbers(numbers);
 		
 		System.out.println("Linear Search");
